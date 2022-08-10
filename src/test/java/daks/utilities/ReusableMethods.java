@@ -26,26 +26,13 @@ public class ReusableMethods {
 
         LoginPage login = new LoginPage();
 
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
-
-
-/*
-// Bu durum systevo oberfläche icin gecerlidir. => alaert cikiyor ve baglanabilmem icin dismiss tiklamam gerekiyor, ancak tiklamiyor ve systevo ya baglanamdim.
-        login.weitereButton.click();
-
-        login.smallLink.click(); // alert bu linke tikladiktan sonra cikiyor.
-
-        if (ReusableMethods.isAlertReady()){
-            Driver.getDriver().switchTo().alert().dismiss();
-        }else
-            System.out.println("kein alert");// konsolda, alert yok diyor,
-Driver.getDriver().switchTo().alert().dismiss();
- */
+         wait = new WebDriverWait(Driver.getDriver(), 10);
 
         login.username.sendKeys("sysadm");
         login.password.sendKeys("sysadm");
         login.loginButton.click();
     }
+
 
     public static boolean isAlertReady() {
         try {
